@@ -4,11 +4,11 @@ import Constants from '../constants/Constants';
 import Colors from '../utils/Colors';
 import {TextInput} from 'react-native-gesture-handler';
 
-const EmailTextField = ({
+const PasswordTextField = ({
   term,
   placeholder,
   onTermChange,
-  onValidateEmailAddress,
+  onValidatePasswordField,
   error,
 }) => {
   return (
@@ -16,11 +16,12 @@ const EmailTextField = ({
       <View style={styles.TextFieldView}>
         <TextInput
           autoCorrect={false}
+          secureTextEntry
           style={styles.TextInput}
           placeholder={placeholder}
           value={term}
           onChangeText={onTermChange}
-          onEndEditing={onValidateEmailAddress}
+          onEndEditing={onValidatePasswordField}
         />
       </View>
       <Text style={styles.ErrorText}>{error}</Text>
@@ -28,7 +29,7 @@ const EmailTextField = ({
   );
 };
 
-export default EmailTextField;
+export default PasswordTextField;
 
 const styles = StyleSheet.create({
   TextField: {
